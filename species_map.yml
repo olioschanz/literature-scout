@@ -1,0 +1,46 @@
+# species_map.yml
+# ───────────────────────────────────────────────────────────
+# Fill in Latin or common names as you discover them.
+# Leave a group’s list empty for now—that’s fine.
+
+species_map:
+  Algae:             []
+  Amphibian:         ["Xenopus laevis", "Ambystoma mexicanum"]     # frog, axolotl
+  Anemone:           ["Nematostella vectensis"]
+  Anthropod:         []
+  Arachnid:          ["Ixodes scapularis"]                         # tick
+  Bird:              ["Gallus gallus", "Taeniopygia guttata"]      # chicken, finch
+  Cnidaria:          ["Hydra vulgaris"]
+  Coral:             ["Acropora millepora"]
+  Crustacean:        ["Daphnia pulex"]
+  Echinoderm:        ["Strongylocentrotus purpuratus"]            # sea urchin
+  Fish:              ["Danio rerio", "Gadus morhua"]              # zebrafish, cod
+  Flagellates:       []
+  Fungi:             ["Neurospora crassa"]
+  Gastropod:         []
+  Human:             ["Homo sapiens"]
+  Hydractinia:       ["Hydractinia symbiolongicarpus"]
+  Insect:            ["Drosophila melanogaster"]
+  Lamprey:           ["Petromyzon marinus"]
+  Lichen:            []
+  Mammal:            ["Mus musculus", "Canis familiaris"]
+  Marine Anthropod:  []
+  Marine Invertebrate: []
+  Microbes:          ["Escherichia coli"]
+  Mollusc:           []
+  Mollusk:           []      # US spelling kept separate just in case
+  Moss:              ["Physcomitrella patens"]
+  Mouse:             ["Mus musculus"]     # you can list the same Latin name twice
+  Multiple:          []      # handled in code – leave blank
+  Nematode:          ["Caenorhabditis elegans"]
+  Other:             []      # fallback
+  Pathogen:          ["Plasmodium falciparum"]
+  Plant:             ["Arabidopsis thaliana", "Oryza sativa"]
+  Protozan:          ["Trypanosoma cruzi"]
+  Reptile:           ["Anolis carolinensis"]
+  Sponge:            ["Amphimedon queenslandica"]
+  Triclad:           ["Schmidtea mediterranea"]   # planarian flatworm
+  Vertebrates:       []      # mixed vertebrate studies
+  Worm:              ["Caenorhabditis elegans"]
+  Yeast:             ["Saccharomyces cerevisiae"]
+

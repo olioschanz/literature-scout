@@ -1,0 +1,51 @@
+# product_terms.yml
+# ─────────────────────────────────────────────────────────────
+# 1)  products:          each kit / service with one or more synonyms
+# 2)  applications_primary:   1-per-paper “big bucket”
+# 3)  applications_secondary: multi-label “sub-areas”
+#
+# Feel free to add new synonyms or keywords any time
+
+products:
+  Hi-C:
+    synonyms: ["Hi-C", "Hi C", "Hi-C scaffolding", "Hi-C sequencing", "Dovetail Hi-C"]
+  HiChIP:
+    synonyms: ["HiChIP", "Hi-ChIP"]
+  HiRise:
+    synonyms: ["HiRise", "Hi-Rise", "HiRise scaffolding", "Dovetail HiRise"]
+  Micro-C:
+    synonyms: ["Micro-C", "Micro C", "Micro-C XL", "Micro-C sequencing"]
+  Omni-C:
+    synonyms: ["Omni-C", "OmniC", "Dovetail Omni-C"]
+  Promoter Capture:
+    synonyms: ["Promoter Capture", "Promoter-capture Hi-C", "Capture-C"]
+  Selva:
+    synonyms: ["Selva", "Selva SV", "Selva pipeline"]
+  Service:
+    synonyms: ["Dovetail service", "Dovetail sequencing service"]
+  TopoLink:
+    synonyms: ["TopoLink", "Topo-Link", "TopoLink assay"]
+  Other:
+    synonyms: []     # fallback — leave empty on purpose
+
+applications_primary:
+  Epigenetics:       ["epigenetic", "methylation", "histone", "chromatin mark"]
+  Genetic Analysis:  ["variant", "snp", "snv", "genetic analysis"]
+  Genome Assembly:   ["assembly", "scaffold", "reference genome"]
+
+applications_secondary:
+  3D Chromatin Topology: ["3D genome", "TAD", "loop", "chromatin topology"]
+  Agricultural Biology:  ["agricultural biology"]
+  Agriculture:           ["crop", "agriculture", "plant breeding"]
+  Cancer:                ["cancer", "tumor", "oncogene", "leukemia"]
+  Conservation:          ["conservation", "endangered", "wildlife"]
+  Developmental Biology: ["developmental", "embryo", "morphogenesis"]
+  Evolution:             ["evolution", "phylogeny", "speciation"]
+  Gene Expression:       ["gene expression", "transcript", "rna-seq"]
+  Genetic Analysis:      ["genetic analysis", "snp", "snv", "variant"]
+  Immunology:            ["immune", "immunology", "antibody"]
+  Inherited Disease:     ["inherited disease", "hereditary", "germline mutation"]
+  Other Disease:         ["disease model", "pathology", "infection"]
+  Other:                 []        # catch-all for rare topics
+  Stem Cell Research:    ["stem cell", "pluripotent", "iPSC"]
+  evolution:             ["evolution"]   # lower-case variant included deliberately
