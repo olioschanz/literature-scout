@@ -41,6 +41,7 @@ DOVETAIL_OR = " OR ".join(DOVETAIL_SYNS)
 # 2. Load vocabularies
 terms = yaml.safe_load(open("product_terms.yml"))
 PRODUCTS = terms["products"]
+PRIMARY_APPS = terms.get("applications_primary", {})
 
 # 3. Query builder  (company-name AND kit-term)
 def build_queries():
@@ -50,7 +51,15 @@ def build_queries():
             query = f"({DOVETAIL_OR}) AND ({product_term})"
             yield prod, query, meta
 
-# 4. Fetch helper
+# 4. Fallback keyword-based application assignment
+def guess_application(title: str, abstract: str) -> str:
+    text = f"{title} {abstract}".lower()
+    for label, keywords in PRIMARY_APPS.items():
+        if any(kw.lower() in text for kw in keywords):
+            return label
+    return "Other"
+
+# 5. Europe PMC fetch helper
 def pull_eupmc(q: str, since: str, page_size: int = 1000):
     url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
     params = {
@@ -65,12 +74,17 @@ def pull_eupmc(q: str, since: str, page_size: int = 1000):
         print("⚠️  Europe PMC error:", e)
         return []
 
-# 5. Public entry
+# 6. Public entry point
 def collect(days_back: int = 365) -> pd.DataFrame:
     since = (dt.date.today() - dt.timedelta(days=days_back)).isoformat()
     rows = []
-    for prod, q in tqdm(list(build_queries()), desc="Europe PMC"):
+    for prod, q, meta in tqdm(list(build_queries()), desc="Europe PMC"):
+        defined_app = meta.get("application", "")
         for rec in pull_eupmc(q, since):
+            # fallback to keyword scan if product doesn't define application
+            primary_app = defined_app or guess_application(
+                rec.get("title", ""), rec.get("abstractText", "")
+            )
             rows.append({
                 "title":    rec.get("title", ""),
                 "doi":      rec.get("doi", ""),
