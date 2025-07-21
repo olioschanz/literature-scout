@@ -27,7 +27,15 @@ from tqdm import tqdm
 # 1. Company-name synonyms  (NO generic 'Dovetail')
 DOVETAIL_SYNS = [
     '"Dovetail Genomics"',   # exact phrase
-    '"Dovetail genomic"'     # handles missing “s”
+    '"Dovetail genomic"',     # handles missing “s”
+    '"Cantata Bio"',
+    '"Dovetail Micro-C"',
+    '"Dovetail HiChIP"',
+    '"Dovetail"',
+    '"LinkPrep"',
+    '"Dovetail"',
+    '"TopoLink"',
+    '"AssemblyLink"'
 ]
 DOVETAIL_OR = " OR ".join(DOVETAIL_SYNS)
 
