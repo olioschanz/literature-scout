@@ -31,6 +31,7 @@ DOVETAIL_SYNS = [
     '"Cantata Bio"',
     '"Dovetail Micro-C"',
     '"Dovetail HiChIP"',
+    '"Dovetail"',
     '"LinkPrep"',
     '"TopoLink"',
     '"AssemblyLink"'
