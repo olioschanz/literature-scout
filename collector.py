@@ -33,7 +33,6 @@ DOVETAIL_SYNS = [
     '"Dovetail HiChIP"',
     '"Dovetail"',
     '"LinkPrep"',
-    '"Dovetail"',
     '"TopoLink"',
     '"AssemblyLink"'
 ]
