@@ -13,16 +13,22 @@ products:
     synonyms: ["Hi-C", "Hi C", "Hi-C scaffolding", "Hi-C sequencing", "Dovetail Hi-C"]
   HiChIP:
     synonyms: ["HiChIP", "Hi-ChIP"]
+    application: "Epigenetics"
   HiRise:
     synonyms: ["HiRise", "Hi-Rise", "HiRise scaffolding", "Dovetail HiRise"]
+    application: "Genome Assembly"
   Micro-C:
     synonyms: ["Micro-C", "Micro C", "Micro-C XL", "Micro-C sequencing"]
+    application: "Epigenetics"
   Omni-C:
     synonyms: ["Omni-C", "OmniC", "Dovetail Omni-C"]
+    application: "Genome Assembly"
   Promoter Capture:
-    synonyms: ["Promoter Capture", "Promoter-capture Hi-C", "Capture-C"]
+    synonyms: ["Promoter Capture", "Promoter-capture Hi-C", "Capture-C", "promoter panel", "Pan Promoter"]
+    application: "Epigenetics"
   Selva:
     synonyms: ["Selva", "Selva SV", "Selva pipeline"]
+    application: "Genetic Analysis"
   Service:
     synonyms: ["Dovetail service", "Dovetail sequencing service"]
   TopoLink:
@@ -31,9 +37,9 @@ products:
     synonyms: []     # fallback — leave empty on purpose
 
 applications_primary:
-  Epigenetics:       ["epigenetic", "methylation", "histone", "chromatin mark"]
-  Genetic Analysis:  ["variant", "snp", "snv", "genetic analysis"]
-  Genome Assembly:   ["assembly", "scaffold", "reference genome"]
+  Epigenetics:       ["epigenetic", "methylation", "histone", "chromatin mark", "3D genomics"]
+  Genetic Analysis:  ["variant", "snp", "snv", "genetic analysis", "somatic variation", "structural variant", "structural variation"]
+  Genome Assembly:   ["assembly", "scaffold", "reference genome", "scaffolding"]
 
 applications_secondary:
   3D Chromatin Topology: ["3D genome", "TAD", "loop", "chromatin topology"]
