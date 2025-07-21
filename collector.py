@@ -48,7 +48,7 @@ def build_queries():
         for syn in meta["synonyms"]:
             product_term = " AND ".join(syn.split()) if " " in syn else syn
             query = f"({DOVETAIL_OR}) AND ({product_term})"
-            yield prod, query
+            yield prod, query, meta
 
 # 4. Fetch helper
 def pull_eupmc(q: str, since: str, page_size: int = 1000):
@@ -80,6 +80,7 @@ def collect(days_back: int = 365) -> pd.DataFrame:
                 "pubYear":  rec.get("pubYear", ""),
                 "species":  rec.get("species", ""),
                 "speciesList": rec.get("speciesList", []),
-                "product_service": prod
+                "product_service": prod,
+                "primary_app": primary_app
             })
     return pd.DataFrame(rows).drop_duplicates(subset=["doi", "title"])
