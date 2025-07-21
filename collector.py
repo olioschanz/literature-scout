@@ -68,12 +68,22 @@ def pull_eupmc(q: str, since: str, page_size: int = 1000):
         "pageSize": page_size,
     }
     try:
-        return requests.get(url, params=params, timeout=20).json()\
-                       .get("resultList", {}).get("result", [])
-    except requests.RequestException as e:
-        print("⚠️  Europe PMC error:", e)
-        return []
+        response = requests.get(url, params=params, timeout=20)
+        response.raise_for_status()
 
+        try:
+            data = response.json()
+            return data.get("resultList", {}).get("result", [])
+        except ValueError:
+            print("⚠️ JSON decoding failed. Response text (partial):")
+            print(response.text[:500])
+            return []
+
+    except requests.RequestException as e:
+        print("⚠️ Request failed for query:", q)
+        print("Error:", e)
+        return []
+        
 # 6. Public entry point
 def collect(days_back: int = 365) -> pd.DataFrame:
     since = (dt.date.today() - dt.timedelta(days=days_back)).isoformat()
