@@ -7,6 +7,8 @@
 # Feel free to add new synonyms or keywords any time
 
 products:
+  LinkPrep:
+    synonyms: ["LinkPrep", "Dovetail Genomics LinkPrep kit", "Dovetail LinkPrep"]
   Hi-C:
     synonyms: ["Hi-C", "Hi C", "Hi-C scaffolding", "Hi-C sequencing", "Dovetail Hi-C"]
   HiChIP:
